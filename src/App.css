@@ -1,0 +1,28 @@
+.wall {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height: 280px;
+    background-color: rgb(255, 255, 255);
+}
+
+.room {
+    position: absolute;
+    right: 50px;
+    width: 200px;
+    height: 280px;
+    background-color: lightgrey;
+    z-index: -1;
+}
+
+.door {
+    position: absolute;
+    top: 63px; /* 上に移動 */
+    right: 250px; /* 左に移動 */
+    width: 50px;
+    height: 280px;
+    background-color: brown;
+    z-index: -1; /* ドアが部屋の前面に表示されるようにする */
+    transform: skewY(20deg); /* Y軸に対して20度傾ける */
+    transform-origin: left center; /* 傾きの基点を左中央に設定 */
+}

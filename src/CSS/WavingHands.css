@@ -1,0 +1,149 @@
+/* 大きな丸（体） */
+.circle {
+    width: 150px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    margin: 50px auto;
+}
+
+.eyes {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+}
+
+.eyes.left {
+    top: 20%;
+    left: 50%;
+}
+
+.eyes.right {
+    top: 20%;
+    left: 65%;
+}
+
+/* 小さい丸（手） */
+.hand {
+    width: 55px;
+    height: 95px;
+    border-radius: 100% / 100%;
+    position: absolute;
+    transform-origin: center -90px;
+    /* 大きな丸の縁に沿う位置に設定 */
+}
+
+.foot {
+    width: 110px;
+    height: 210px;
+    border-radius: 150% / 150%;
+    position: absolute;
+    top: 5%;
+    left: 13%;
+    transform-origin: center 40px;
+    /* 大きな丸の縁に沿う位置に設定 */
+}
+
+.foot.left {
+    transform: rotate(-15deg);
+}
+
+.foot.right {
+    transform: rotate(15deg);
+}
+
+/* 左手 */
+.hand.left {
+    transform: rotate(-45deg);
+    /* 初期角度を設定 */
+    transform-origin: 40px -30px;
+    animation: waveLeft 3.5s infinite ease-in-out;
+    top: 28%;
+    left: 40%;
+}
+
+/* 右手 */
+.hand.right {
+    transform: rotate(45deg);
+    /* 初期角度を設定 */
+    transform-origin: 35px -30px;
+    animation: waveRight 3.8s infinite ease-in-out;
+    top: 38%;
+    left: 18%;
+}
+
+/* 左手の揺れるアニメーション */
+@keyframes waveLeft {
+
+    0%,
+    100% {
+        transform: rotate(-48deg);
+    }
+
+    50% {
+        transform: rotate(-35deg);
+        /* 左右に揺れる動き */
+    }
+}
+
+/* 右手の揺れるアニメーション */
+@keyframes waveRight {
+
+    0%,
+    100% {
+        transform: rotate(48deg);
+    }
+
+    50% {
+        transform: rotate(30deg);
+        /* 左右に揺れる動き */
+    }
+}
+
+/* App.css または WavingHands.css に追加 */
+@keyframes colorChange {
+    0% {
+        background-color: #3498db;
+    }
+
+    20% {
+        background-color: #893ce7;
+    }
+
+    40% {
+        background-color: #db3434;
+    }
+
+    60% {
+        background-color: #bfdb34;
+    }
+
+    80% {
+        background-color: #3ce747;
+    }
+
+    100% {
+        background-color: #3498db;
+    }
+}
+
+.colorChange {
+    animation: colorChange 10s infinite;
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.circleWalk {
+    animation: walk 10s linear infinite;
+}
